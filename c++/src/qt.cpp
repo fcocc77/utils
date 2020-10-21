@@ -24,6 +24,7 @@ namespace qt
             layout = parent->layout();
         }
 
+        widget->setParent(parent);
         parent->layout()->addWidget(widget);
     }
 
