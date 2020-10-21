@@ -192,7 +192,7 @@ QLayout *qlayout(QLayout *parent, QString direction, QString name)
 {
 	// crea un widget y layout en uno, para que el disenio no tenga tango codigo
 	QWidget *widget = new QWidget();
-	widget->setContentsMargins(0,0,0,0);
+	widget->setContentsMargins(0, 0, 0, 0);
 	if (!name.isEmpty())
 		widget->setObjectName(name);
 
@@ -219,3 +219,15 @@ QString getPath()
 	return fread("/etc/vinarender");
 	// --------------------------
 }
+
+namespace util
+{
+	QString hash()
+	{
+		QString str = QUuid::createUuid().toString();
+		str.remove(QRegularExpression("{|}|-"));
+
+		return str;
+	}
+
+} // namespace util

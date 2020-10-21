@@ -6,7 +6,7 @@
 #include <sstream>   // istringstream
 #include <algorithm> //sort , find
 #include <typeinfo>
-#include "os.hpp"
+#include <os.hpp>
 #include <ctime> // time_t
 #include <QDebug>
 #include <QString>
@@ -20,6 +20,8 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <QRegularExpression>
+#include <QUuid>
 
 using namespace std;
 
@@ -61,5 +63,10 @@ void print(T1 input1, T2 input2, T3 input3)
 // ----------------------------
 
 const QString path = getPath();
+
+namespace util
+{
+    QString hash();
+}
 
 #endif //UTIL_HPP
