@@ -4,6 +4,8 @@
 #include <QPushButton>
 #include <QString>
 #include <QVBoxLayout>
+#include <QJsonArray>
+#include <QStringList>
 
 #include <util.hpp>
 
@@ -11,6 +13,8 @@ namespace qt
 {
     void set_icon(QPushButton *button, QString path);
     void add_widget(QWidget *parent, QWidget *widget);
+    QJsonArray list_to_array(QStringList list);
+    QStringList array_to_list(QJsonArray array);
 
     template <class T>
     void insert_json_deep(QJsonObject *object, QStringList keys, T value)

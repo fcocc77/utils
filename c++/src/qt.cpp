@@ -28,4 +28,26 @@ namespace qt
         parent->layout()->addWidget(widget);
     }
 
+    QJsonArray list_to_array(QStringList list)
+    {
+        QJsonArray array;
+        for (QString item : list)
+        {
+            array.push_back(item);
+        }
+
+        return array;
+    }
+
+    QStringList array_to_list(QJsonArray array)
+    {
+        QStringList list;
+        for (QJsonValue item : array)
+        {
+            list.push_back(item.toString());
+        }
+
+        return list;
+    }
+
 } // namespace qt
