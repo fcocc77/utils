@@ -2,12 +2,12 @@
 
 namespace qt
 {
-    void set_icon(QPushButton *button, QString path)
+    void set_icon(QPushButton *button, QString path, QSize size)
     {
         QPixmap pixmap(path);
         QIcon ButtonIcon(pixmap);
         button->setIcon(ButtonIcon);
-        button->setIconSize(pixmap.rect().size());
+        button->setIconSize(QSize(size));
     }
 
     void add_widget(QWidget *parent, QWidget *widget)
