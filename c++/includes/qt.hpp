@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 #include <QJsonArray>
 #include <QStringList>
+#include <QShortcut>
 
 #include <util.hpp>
 
@@ -15,6 +16,13 @@ namespace qt
     void add_widget(QWidget *parent, QWidget *widget);
     QJsonArray list_to_array(QStringList list);
     QStringList array_to_list(QJsonArray array);
+
+    template <class T, typename Func>
+    void shortcut(QString key, T *obj, Func lambda_func)
+    {
+        QShortcut *_shortcut = new QShortcut(QKeySequence(key), obj);
+        QObject::connect(_shortcut, &QShortcut::activated, obj, lambda_func);
+    }
 
     template <class T>
     void insert_json_deep(QJsonObject *object, QStringList keys, T value)
