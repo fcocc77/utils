@@ -12,7 +12,7 @@
 
 namespace qt
 {
-    void set_icon(QPushButton *button, QString path, QSize size = QSize(20, 20));
+    void set_icon(QPushButton *button, QString path, int size = 30);
     void add_widget(QWidget *parent, QWidget *widget);
     QJsonArray list_to_array(QStringList list);
     QStringList array_to_list(QJsonArray array);
