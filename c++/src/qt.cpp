@@ -29,6 +29,14 @@ namespace qt
         parent->layout()->addWidget(widget);
     }
 
+    bool alt()
+    {
+        if (QGuiApplication::keyboardModifiers().testFlag(Qt::AltModifier))
+            return true;
+        else
+            return false;
+    }
+
     QJsonArray list_to_array(QStringList list)
     {
         QJsonArray array;

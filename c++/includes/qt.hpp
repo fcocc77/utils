@@ -7,6 +7,7 @@
 #include <QJsonArray>
 #include <QStringList>
 #include <QShortcut>
+#include <QGuiApplication>
 
 #include <util.hpp>
 
@@ -16,6 +17,8 @@ namespace qt
     void add_widget(QWidget *parent, QWidget *widget);
     QJsonArray list_to_array(QStringList list);
     QStringList array_to_list(QJsonArray array);
+    bool alt();
+
 
     template <class T, typename Func>
     void shortcut(QString key, T *obj, Func lambda_func)
