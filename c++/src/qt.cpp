@@ -37,6 +37,15 @@ namespace qt
             return false;
     }
 
+
+    bool shift()
+    {
+        if (QGuiApplication::keyboardModifiers().testFlag(Qt::ShiftModifier))
+            return true;
+        else
+            return false;
+    }
+
     QJsonArray list_to_array(QStringList list)
     {
         QJsonArray array;

@@ -18,7 +18,7 @@ namespace qt
     QJsonArray list_to_array(QStringList list);
     QStringList array_to_list(QJsonArray array);
     bool alt();
-
+    bool shift();
 
     template <class T, typename Func>
     void shortcut(QString key, T *obj, Func lambda_func)
