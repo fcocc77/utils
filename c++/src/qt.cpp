@@ -37,13 +37,17 @@ namespace qt
             return false;
     }
 
-
     bool shift()
     {
         if (QGuiApplication::keyboardModifiers().testFlag(Qt::ShiftModifier))
             return true;
         else
             return false;
+    }
+
+    float distance_points(QPointF a, QPointF b)
+    {
+        return sqrt(pow(a.x() - b.x(), 2) + pow(a.y() - b.y(), 2));
     }
 
     QJsonArray list_to_array(QStringList list)

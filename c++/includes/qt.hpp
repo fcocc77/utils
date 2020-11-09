@@ -19,6 +19,7 @@ namespace qt
     QStringList array_to_list(QJsonArray array);
     bool alt();
     bool shift();
+    float distance_points(QPointF a, QPointF b);
 
     template <class T, typename Func>
     void shortcut(QString key, T *obj, Func lambda_func)
