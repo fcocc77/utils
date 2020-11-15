@@ -21,6 +21,16 @@ namespace qt
     bool shift();
     float distance_points(QPointF a, QPointF b);
 
+    template <class T>
+    QList<T> reverse(QList<T> list)
+    {
+        // revierte una lista, retornando una lista nueva
+        QList<T> _list = list;
+        std::reverse(begin(_list), end(_list));
+
+        return _list;
+    }
+
     template <class T, typename Func>
     void shortcut(QString key, T *obj, Func lambda_func)
     {
