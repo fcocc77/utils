@@ -29,6 +29,11 @@ namespace qt
         parent->layout()->addWidget(widget);
     }
 
+    QString float_to_string(float number, int decimals)
+    {
+        return QString::number(qRound(number * 100) / 100.0, 'f', decimals);
+    }
+
     bool alt()
     {
         if (QGuiApplication::keyboardModifiers().testFlag(Qt::AltModifier))

@@ -20,6 +20,7 @@ namespace qt
     bool alt();
     bool shift();
     float distance_points(QPointF a, QPointF b);
+    QString float_to_string(float number, int decimals);
 
     template <class T>
     QList<T> reverse(QList<T> list)
