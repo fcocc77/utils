@@ -6,7 +6,7 @@
 #include <sstream>   // istringstream
 #include <algorithm> //sort , find
 #include <typeinfo>
-#include <os.hpp>
+#include <os.h>
 #include <ctime> // time_t
 #include <QDebug>
 #include <QString>

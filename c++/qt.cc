@@ -1,4 +1,4 @@
-#include <qt.hpp>
+#include <qt.h>
 
 namespace qt
 {

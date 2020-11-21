@@ -1,4 +1,4 @@
-#include "os.hpp"
+#include "os.h"
 #include <QDebug>
 #include <QString>
 

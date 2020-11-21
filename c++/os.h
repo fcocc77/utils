@@ -16,7 +16,7 @@ using namespace std;
 #include <QFile>
 #include <QProcess>
 //librerias propias
-#include "util.hpp"
+#include "util.h"
 //--------------------
 
 #ifdef _WIN32

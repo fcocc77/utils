@@ -9,7 +9,7 @@
 #include <QShortcut>
 #include <QGuiApplication>
 
-#include <util.hpp>
+#include <util.h>
 
 namespace qt
 {

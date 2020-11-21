@@ -1,6 +1,6 @@
 
 //librereias propias
-#include "util.hpp"
+#include "util.h"
 //------------------------
 
 QString fread(QString _path)
