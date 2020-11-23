@@ -8,6 +8,8 @@
 #include <QStringList>
 #include <QShortcut>
 #include <QGuiApplication>
+#include <QApplication>
+#include <QLineEdit>
 
 #include <util.h>
 
@@ -21,6 +23,7 @@ namespace qt
     bool shift();
     float distance_points(QPointF a, QPointF b);
     QString float_to_string(float number, int decimals);
+    void focus_under_mouse(QWidget *obj);
 
     template <class T>
     QList<T> reverse(QList<T> list)

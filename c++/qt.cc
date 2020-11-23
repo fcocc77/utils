@@ -77,4 +77,21 @@ namespace qt
         return list;
     }
 
+    void focus_under_mouse(QWidget *obj)
+    {
+        // esto se usa en algunos widget para que cuando el cursor este sobre el widget
+        // lo deje a foco, y asi los shortcut de cada widget, funcionen de inmediato, y asi
+        // no tengamos que darle click al widget para darle foco; con excepción al
+        // widget que esta en foco de tipo 'QLineEdit' no cambia el foco.
+        if (!obj->hasFocus())
+        {
+            if (obj->underMouse())
+            {
+                QString class_name = qApp->focusWidget()->metaObject()->className();
+                if (class_name != "QLineEdit" && class_name != "QCodeEditor")
+                    obj->setFocus();
+            }
+        }
+    }
+
 } // namespace qt
