@@ -85,7 +85,7 @@ namespace qt
         // widget que esta en foco de tipo 'QLineEdit' no cambia el foco.
         if (!obj->hasFocus())
         {
-            if (obj->underMouse())
+            if (qApp->widgetAt(QCursor::pos()) == obj)
             {
                 QString class_name = qApp->focusWidget()->metaObject()->className();
                 if (class_name != "QLineEdit" && class_name != "QCodeEditor")
