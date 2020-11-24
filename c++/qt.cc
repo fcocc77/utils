@@ -87,9 +87,13 @@ namespace qt
         {
             if (qApp->widgetAt(QCursor::pos()) == obj)
             {
-                QString class_name = qApp->focusWidget()->metaObject()->className();
-                if (class_name != "QLineEdit" && class_name != "QCodeEditor")
-                    obj->setFocus();
+                QWidget *focus_widget = qApp->focusWidget();
+                if (focus_widget)
+                {
+                    QString class_name = qApp->focusWidget()->metaObject()->className();
+                    if (class_name != "QLineEdit" && class_name != "QCodeEditor")
+                        obj->setFocus();
+                }
             }
         }
     }
