@@ -20,6 +20,7 @@ namespace qt
     QJsonArray list_to_array(QStringList list);
     QStringList array_to_list(QJsonArray array);
     bool alt();
+    bool control();
     bool shift();
     float distance_points(QPointF a, QPointF b);
     QString float_to_string(float number, int decimals);

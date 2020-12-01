@@ -42,6 +42,14 @@ namespace qt
             return false;
     }
 
+    bool control()
+    {
+        if (QGuiApplication::keyboardModifiers().testFlag(Qt::ControlModifier))
+            return true;
+        else
+            return false;
+    }
+
     bool shift()
     {
         if (QGuiApplication::keyboardModifiers().testFlag(Qt::ShiftModifier))
