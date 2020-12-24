@@ -41,18 +41,13 @@ def fread(file):
 
 
 def jread(file):
-    return json.loads(
-        fread(file),
-        object_hook=lambda d: Namespace(**d)
-    )
+    return json.loads(fread(file))
 
 
 def jwrite(file, data):
     info = json.dumps(
-        vars(data),
-        sort_keys=True,
+        data,
         indent=4,
-        default=lambda x: x.__dict__
     )
 
     fwrite(file, info)
