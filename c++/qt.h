@@ -10,6 +10,8 @@
 #include <QGuiApplication>
 #include <QApplication>
 #include <QLineEdit>
+#include <QStyle>
+#include <QWidget>
 
 #include <util.h>
 
@@ -25,6 +27,14 @@ namespace qt
     float distance_points(QPointF a, QPointF b);
     QString float_to_string(float number, int decimals);
     void focus_under_mouse(QWidget *obj);
+
+    template <class T1, class T2>
+	void set_property(T1 *widget, char *name, T2 value)
+	{
+		widget->setProperty(name, value);
+		widget->style()->unpolish(widget);
+		widget->style()->polish(widget);
+	}
 
     template <class T>
     QList<T> reverse(QList<T> list)
