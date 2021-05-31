@@ -5,6 +5,9 @@ namespace qt
     void set_icon(QPushButton *button, QString name, int size)
     {
         QString path = "resources/images/" + name + ".png";
+        if (name.contains("/"))
+            path = name;
+
         QPixmap pixmap(path);
         QIcon ButtonIcon(pixmap);
         button->setIcon(ButtonIcon);
