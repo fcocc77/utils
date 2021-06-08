@@ -26,6 +26,7 @@
 using namespace std;
 
 QString fread(QString path);
+QString read_first_line(QString path);
 void fwrite(QString path, QString data);
 void awrite(QString path, QString data);
 QString timeStruct(float t);
