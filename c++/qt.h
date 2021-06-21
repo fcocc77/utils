@@ -29,9 +29,9 @@ namespace qt
     void focus_under_mouse(QWidget *obj);
 
     template <class T1, class T2>
-	void set_property(T1 *widget, char *name, T2 value)
+	void set_property(T1 *widget, QString name, T2 value)
 	{
-		widget->setProperty(name, value);
+		widget->setProperty(name.toStdString().c_str(), value);
 		widget->style()->unpolish(widget);
 		widget->style()->polish(widget);
 	}
