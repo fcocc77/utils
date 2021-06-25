@@ -36,7 +36,6 @@ const QString currentDateTime(int num);
 const QString secToTime(float sec);
 QJsonObject jread(QString path);
 void jwrite(QString path, QJsonObject data);
-QString getPath();
 QString jats(QJsonArray data);  // jats =  json array to string
 QString jots(QJsonObject data); // jots =  json object to string
 QJsonObject jofs(QString data); // jofs =  json object from string

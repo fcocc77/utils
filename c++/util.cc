@@ -235,13 +235,6 @@ QLayout *qlayout(QLayout *parent, QString direction, QString name)
     }
 }
 
-QString getPath()
-{
-    // este archivo es generado en la instalacion,
-    // con la ruta donde se instala el vinarender
-    return fread("/etc/vinarender");
-    // --------------------------
-}
 
 namespace util
 {
