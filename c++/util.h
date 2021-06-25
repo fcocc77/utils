@@ -62,8 +62,6 @@ void print(T1 input1, T2 input2, T3 input3)
 }
 // ----------------------------
 
-const QString path = getPath();
-
 namespace util
 {
     QString hash();
