@@ -300,21 +300,20 @@ const QString ip()
 
 const QString mac()
 {
-    for (QNetworkInterface interface : QNetworkInterface::allInterfaces())
+    auto interfaces = QNetworkInterface::allInterfaces();
+    for (int i = 0; i < interfaces.count(); i++)
     {
-        QString _mac = interface.hardwareAddress();
+        QString _mac = interfaces[i].hardwareAddress();
         QString _ip;
 
         // encuentra la ip correspondiente a la interface
-        QList<QNetworkAddressEntry> address = interface.addressEntries();
+        QList<QNetworkAddressEntry> address = interfaces[i].addressEntries();
         if (!address.empty())
             _ip = address[0].ip().toString();
-        // -----------------------
 
         // retorna la direccion mac que corresponde a la ip
         if (_ip == ip())
             return _mac;
-        // ------------------------
     }
 
     return "";
