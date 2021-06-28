@@ -303,8 +303,12 @@ QString get_user()
     static QString user_name;
 
     if (user_name.isEmpty())
+    {
         user_name = os::sh(
-            "sh -c \"loginctl list-sessions | awk /1/'{print $3; exit}'\"");
+                "sh -c \"loginctl list-sessions | awk /1/'{print $3; exit}'\"");
+
+        user_name = user_name.simplified();
+    }
 
     return user_name;
 }
