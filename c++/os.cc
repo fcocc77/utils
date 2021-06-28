@@ -298,6 +298,22 @@ const QString ip()
     return "";
 }
 
+QString get_user()
+{
+    static QString user_name;
+
+    if (user_name.isEmpty())
+        user_name = os::sh(
+            "sh -c \"loginctl list-sessions | awk /1/'{print $3; exit}'\"");
+
+    return user_name;
+}
+
+QString get_home()
+{
+    return "/home/" + get_user();
+}
+
 const QString mac()
 {
     auto interfaces = QNetworkInterface::allInterfaces();

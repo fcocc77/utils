@@ -34,6 +34,8 @@ void remove(QString _file);
 void system(QString cmd);
 QString dirname(QString file);
 QString basename(QString file);
+QString get_user();
+QString get_home();
 bool isfile(QString file);
 bool isdir(QString dir);
 void makedirs(QString dir);
