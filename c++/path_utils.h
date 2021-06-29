@@ -10,6 +10,7 @@ QString remove_padding(QString _string);
 QString remove_ext(QString _string);
 QString get_padding(QString _string);
 QString get_ext(QString _string);
+QString basename_no_ext(QString _string);
 
 }; // namespace path_util
 

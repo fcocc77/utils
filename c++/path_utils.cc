@@ -49,4 +49,10 @@ QString remove_padding(QString _string)
     return dirname + "/" + basename_no_padding;
 }
 
+QString basename_no_ext(QString _string)
+{
+    QString basename = os::basename(_string);
+    return basename.replace("." + get_ext(basename), "");
+}
+
 }; // namespace path_util
