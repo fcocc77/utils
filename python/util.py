@@ -1,6 +1,5 @@
 import json
 import os
-from argparse import Namespace
 import random
 import string
 from time import sleep
@@ -22,8 +21,7 @@ def fwrite(file, date):
 
 def fread(file):
     reading = "0"
-    for n in range(100):
-
+    for _ in range(100):
         if os.path.isfile(file):
             f = open(file, "r")
             reading = str(f.read().strip())
@@ -57,7 +55,7 @@ def hash_generator(keyLen):
     def base_str():
         return (string.ascii_letters + string.digits)
 
-    keylist = [random.choice(base_str()) for i in range(keyLen)]
+    keylist = [random.choice(base_str()) for _ in range(keyLen)]
     return ("".join(keylist))
 
 
